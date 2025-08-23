@@ -77,7 +77,12 @@ document.querySelector('#withdraw-btn').addEventListener('click', function(event
 // toggling with add money and cashout =========
 
 document.getElementById('add-money-toggle').addEventListener('click', function() {
-    
+
+    // toggle style addmoney and cashout button
+    document.getElementById('add-money-toggle').style.border = '2px solid red';
+    document.getElementById('cash-out-toggle').style.border = '2px solid grey';
+
+    // toggle style for the addmoney and cashout
     document.getElementById('cash-out-parent').style.display = 'none';
     document.getElementById('add-money-parent').style.display = 'block';
      
@@ -85,6 +90,11 @@ document.getElementById('add-money-toggle').addEventListener('click', function()
 
 document.getElementById('cash-out-toggle').addEventListener('click', function(){
 
+    // toggle style addmoney and cashout button
+    document.getElementById('cash-out-toggle').style.border = '2px solid red';
+    document.getElementById('add-money-toggle').style.border = '2px solid grey';
+
+    // toggle style for the addmoney and cashout
     document.getElementById('add-money-parent').style.display = 'none';
     document.getElementById('cash-out-parent').style.display = 'block';
 })
