@@ -1,5 +1,8 @@
 // add event listener to the Add Money
 
+// pin number
+const pinNumber = 1234;
+
 document.querySelector('#add-money-btn').addEventListener('click', function(event){
     event.preventDefault();
     
@@ -7,17 +10,26 @@ document.querySelector('#add-money-btn').addEventListener('click', function(even
     const bank = document.querySelector('#add-bank').value;
     const bankAccountNumber = document.querySelector('#add-bank-account').value;
     const addAmount = parseInt(document.querySelector('#add-amount').value);
-    const addPin = document.querySelector('#add-pin').value;
+    const addPin = parseInt(document.querySelector('#add-pin').value);
 
     // get the avaiable balance
     const avaiableBalance = parseInt(document.querySelector('#available-balance').textContent)
 
     // sum available balance 
+    if(bankAccountNumber.length < 11){
+        alert("Please input 11 digit Bank Account Number!")
+        return;
+    }
+    if(addPin !== pinNumber){
+        alert("Please input valid Pin Number!")
+        return;
+    }
     const total = avaiableBalance + addAmount;
     
     // update available balance
     document.querySelector('#available-balance').textContent = total;
-
+    // notification
+    alert('Balance Updated Succesfully!')
    
 
 
