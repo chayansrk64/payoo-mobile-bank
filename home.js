@@ -37,6 +37,43 @@ document.querySelector('#add-money-btn').addEventListener('click', function(even
 
 
 
+
+
+// withdraw money section =================
+
+document.querySelector('#withdraw-btn').addEventListener('click', function(event){
+    event.preventDefault();
+
+     // get the avaiable balance
+    const avaiableBalance = parseInt(document.querySelector('#available-balance').textContent)
+    // withdraw fileds
+    const agentNumber = document.querySelector('#agent-number').value;
+    const cashOutAmount = parseInt(document.querySelector('#cashout-amount').value);
+    const cashOutPin = parseInt(document.querySelector('#cashout-pin').value);
+
+    // validation pin
+    if(pinNumber !== cashOutPin){
+        alert("Pin Number didn't match");
+        return;
+    }
+    // subtract balance
+    const newBalance = avaiableBalance - cashOutAmount;
+    // new balance
+    document.querySelector('#available-balance').textContent = newBalance;
+
+    // notification
+    alert("Cash out successful!")
+
+
+    
+})
+
+
+
+
+
+
+
 // toggling with add money and cashout =========
 
 document.getElementById('add-money-toggle').addEventListener('click', function() {
