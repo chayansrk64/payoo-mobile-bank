@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-[#F4F5F7] h-[100vh] max-w-lg mx-auto">
+<body class="bg-[#F4F5F7]   max-w-lg mx-auto">
 
     <!-- header section -->
      <div class="min-h-[50px] flex justify-between items-center border-b-2 border-gray-500 p-4">
@@ -58,6 +58,44 @@
             <img class="mx-auto" src="./assets/transaction1.png" alt="">
             <h3>Transactions</h3>
         </div>
+     </div>
+
+
+     <!--  Add Money seciton   -->
+  
+     
+     <div class="p-8 bg-gray-200 m-4 rounded-xl">
+         <h2 class="text-3xl text-center font-bold my-4 p-4">Add Money</h2>
+        <form>
+            <div>
+                <label for="" class="font-semibold ">Select A Bank</label> <br>
+             <select name="" id="" class="input rounded-4xl mb-5 mt-2 w-full">
+                <option value="Dhaka Bank" selected>Dhaka Bank</option>
+                <option value="Dhaka Bank">Agrani Bank</option>
+                <option value="Dhaka Bank">Sunali Bank</option>
+                <option value="Dhaka Bank">Dutch Bangla Bank</option>
+                <option value="Dhaka Bank">bKash Bank</option>
+             </select>
+            </div>
+
+            <div>
+             <label for="number" class="font-semibold ">Bank Account Number</label> <br>
+            <input type="text" placeholder="Mobile Number" id="" class="input rounded-4xl mb-5 mt-2 w-full" />
+           </div>
+            <div>
+             <label for="number" class="font-semibold ">Bank Account Number</label> <br>
+            <input type="text" placeholder="Enter 11 digit number" id=" " class="input rounded-4xl mb-5 mt-2 w-full" />
+           </div>
+            <div>
+             <label for="number" class="font-semibold ">Amount to Add</label> <br>
+            <input type="text" placeholder="Add Amount to withdraw" id=" " class="input rounded-4xl mb-5 mt-2 w-full" />
+           </div>
+            <div>
+             <label for="number" class="font-semibold ">Pin Number</label> <br>
+            <input type="text" placeholder="Enter 4 digit pin" id=" " class="input rounded-4xl mb-5 mt-2 w-full" />
+           </div>
+
+        </form>
      </div>
 
 </body>
