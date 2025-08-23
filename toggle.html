@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggling</title>
+    <style>
+        body{
+            padding: 100px;
+            width: 600px;
+            margin: 0 auto;
+        }
+        #div-1{
+            display: none;
+            background-color: rgb(119, 155, 119);
+            padding: 5rem;
+            width: 400px;
+        }
+        #div-2{
+            display: none;
+            background-color: rgb(118, 115, 163);
+            padding: 5rem;
+            width: 400px;
+        }
+        #btn-1{
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            background: rgb(119, 155, 119);
+            border: none;
+            border-radius: 5px;
+           
+        }
+        #btn-2{
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            background: rgb(118, 115, 163);
+            border: none;
+            border-radius: 5px;
+             margin-left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="btn-1">Button-1</button>
+    <button id="btn-2">Button-2</button>
+
+    <br> 
+    <br>
+
+    <div id="div-1">
+        <h1>Display Title 1</h1>
+    </div>
+
+    <div id="div-2">
+        <h1>Display Title 2</h1>
+    </div>
+
+
+    <script>
+        document.querySelector('#btn-1').addEventListener('click', function(){
+            document.querySelector('#div-2').style.display = "none";
+            document.querySelector('#div-1').style.display = "block";
+        });
+
+        document.querySelector('#btn-2').addEventListener('click', function(){
+            document.querySelector('#div-1').style.display = 'none';
+            document.querySelector('#div-2').style.display = 'block';
+        })
+    </script>
+
+</body>
+</html>
