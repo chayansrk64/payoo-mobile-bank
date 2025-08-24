@@ -29,6 +29,16 @@ function toggleForm(id){
     document.getElementById(id).style.display = 'block';
 }
 
+// toggle button styles
+function toggleBtnStyles(id){
+    const allBtns = document.getElementsByClassName('toggle-style');
+    for(const btn of allBtns){
+        btn.classList.remove("border-[#0874f2]", "bg-[#0874F20d]", "text-[#0874f2]")
+        btn.classList.add("border-grey-500")
+    }
+    document.getElementById(id).classList.add("border-[#0874f2]", "bg-[#0874F20d]", "text-[#0874f2]")
+}
+
 
 
 
@@ -120,13 +130,29 @@ document.getElementById('add-money-toggle').addEventListener('click', function()
 
     toggleForm('add-money-parent')     
 
+
+    // button toggle style
+    // const allBtns = document.getElementsByClassName('toggle-style');
+    
+    // for(const btn of allBtns){
+    //     btn.classList.remove("border-[#0874f2]", "bg-[#0874F20d]", "text-[#0874f2]")
+    //     btn.classList.add("border-grey-500")
+    // }
+    // document.getElementById('add-money-toggle').classList.add("border-[#0874f2]", "bg-[#0874F20d]", "text-[#0874f2]")
+
+    toggleBtnStyles('add-money-toggle')
+
+
+
 })
 
 // toggling with cash out =========
 
 document.getElementById('cash-out-toggle').addEventListener('click', function(){
-
+   
     toggleForm('cash-out-parent')
+    
+    toggleBtnStyles('cash-out-toggle')
 
 })
 
@@ -135,5 +161,7 @@ document.getElementById('cash-out-toggle').addEventListener('click', function(){
 document.getElementById('transfer-toggle').addEventListener('click', function(){
 
      toggleForm('transfer-parent')
+
+     toggleBtnStyles('transfer-toggle')
 
 })
