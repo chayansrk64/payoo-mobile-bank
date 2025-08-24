@@ -3,6 +3,8 @@
 // pin number
 const pinNumber = 1234;
 
+// ============== reusable functions =============
+
 // reusable function for values
 function getValuesInNumber(id){
     return parseInt(document.getElementById(id).value);
@@ -10,8 +12,28 @@ function getValuesInNumber(id){
 
 // reusable for avaiable balance
 function getAvailableBalance(){
-    return parseInt(document.querySelector('#available-balance').textContent);
+    return parseInt(document.querySelector('#available-balance').innerText);
 }
+
+// reusable function to set innerText
+function setInnerText(value){
+    return document.getElementById('available-balance').innerText = value;
+}
+
+// toggle form function
+function toggleForm(id){
+    const forms = document.getElementsByClassName('form');
+    for(const form of forms){
+        form.style.display = 'none'
+    }
+    document.getElementById(id).style.display = 'block';
+}
+
+
+
+
+
+// add money section ========
 
 document.querySelector('#add-money-btn').addEventListener('click', function(event){
     event.preventDefault();
@@ -37,7 +59,8 @@ document.querySelector('#add-money-btn').addEventListener('click', function(even
     const total = avaiableBalance + addAmount;
     
     // update available balance
-    document.querySelector('#available-balance').textContent = total;
+    setInnerText(total)
+
     // notification
     alert('Balance Updated Succesfully!')
    
@@ -70,8 +93,9 @@ document.querySelector('#withdraw-btn').addEventListener('click', function(event
     }
     // subtract balance
     const newBalance = avaiableBalance - cashOutAmount;
+
     // new balance
-    document.querySelector('#available-balance').textContent = newBalance;
+    setInnerText(newBalance);
 
     // notification
     alert("Cash out successful!")
@@ -84,29 +108,32 @@ document.querySelector('#withdraw-btn').addEventListener('click', function(event
 
 
 
-
-
-// toggling with add money and cashout =========
+// toggling with add money =========
 
 document.getElementById('add-money-toggle').addEventListener('click', function() {
 
-    // toggle style addmoney and cashout button
-    document.getElementById('add-money-toggle').style.border = '2px solid red';
-    document.getElementById('cash-out-toggle').style.border = '2px solid grey';
+    // const forms = document.getElementsByClassName('form');
+    // for(const form of forms){
+    //     form.style.display = 'none'
+    // }
+    // document.getElementById('add-money-parent').style.display = 'block';
 
-    // toggle style for the addmoney and cashout
-    document.getElementById('cash-out-parent').style.display = 'none';
-    document.getElementById('add-money-parent').style.display = 'block';
-     
+    toggleForm('add-money-parent')     
+
 })
+
+// toggling with cash out =========
 
 document.getElementById('cash-out-toggle').addEventListener('click', function(){
 
-    // toggle style addmoney and cashout button
-    document.getElementById('cash-out-toggle').style.border = '2px solid red';
-    document.getElementById('add-money-toggle').style.border = '2px solid grey';
+    toggleForm('cash-out-parent')
 
-    // toggle style for the addmoney and cashout
-    document.getElementById('add-money-parent').style.display = 'none';
-    document.getElementById('cash-out-parent').style.display = 'block';
+})
+
+// toggleing with transfer money ==========
+
+document.getElementById('transfer-toggle').addEventListener('click', function(){
+
+     toggleForm('transfer-parent')
+
 })
