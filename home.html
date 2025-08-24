@@ -46,15 +46,15 @@
             <img class="mx-auto" src="./assets/money1.png" alt="">
             <h3>Transfar Money</h3>
         </div>
-        <div class="toggle-style text-center border-2 border-grey-500 rounded-lg p-4 font-bold h-[120px] cursor-pointer flex justify-center items-center flex-col">
+        <div id="bonus-toggle" class="toggle-style text-center border-2 border-grey-500 rounded-lg p-4 font-bold h-[120px] cursor-pointer flex justify-center items-center flex-col">
             <img class="mx-auto" src="./assets/bonus1.png" alt="">
             <h3>Get Bonus</h3>
         </div>
-        <div class="toggle-style text-center border-2 border-grey-500 rounded-lg p-4 font-bold h-[120px] cursor-pointer flex justify-center items-center flex-col">
+        <div id="pay-bill-toggle" class="toggle-style text-center border-2 border-grey-500 rounded-lg p-4 font-bold h-[120px] cursor-pointer flex justify-center items-center flex-col">
             <img class="mx-auto" src="./assets/purse1.png" alt="">
-            <h3>Add Money</h3>
+            <h3>Pay Bill</h3>
         </div>
-        <div class="toggle-style text-center border-2 border-grey-500 rounded-lg p-4 font-bold h-[120px] cursor-pointer flex justify-center items-center flex-col">
+        <div id="transaction-toggle" class="toggle-style text-center border-2 border-grey-500 rounded-lg p-4 font-bold h-[120px] cursor-pointer flex justify-center items-center flex-col">
             <img class="mx-auto" src="./assets/transaction1.png" alt="">
             <h3>Transactions</h3>
         </div>
@@ -142,6 +142,75 @@
            </div>
 
             <button id="" class="btn bg-[#0874f2] w-full rounded-4xl text-white">Withdraw Money</button>
+
+
+        </form>
+      </div>
+     <!-- Get Bonus section -->
+      <div id="bonus-parent" class="form hidden p-8 bg-gray-200 m-4 rounded-xl ">
+         <h2 class="text-3xl text-center font-bold my-4 p-4">Bonus</h2>
+          <form>
+             
+            <div>
+             <label for="number" class="font-semibold ">Agent Number</label> <br>
+            <input type="text" placeholder="Agent Number" id="" class="input rounded-xl mb-5 mt-2 w-full" />
+           </div>
+            <div>
+             <label for="number" class="font-semibold ">Amount</label> <br>
+            <input type="text" placeholder="Amount" id="" class="input rounded-xl mb-5 mt-2 w-full" />
+           </div>
+            <div>
+             <label for="number" class="font-semibold ">Pin Number</label> <br>
+            <input type="text" placeholder="Enter 4 digit pin" id="" class="input rounded-xl mb-5 mt-2 w-full" />
+           </div>
+
+            <button id="" class="btn bg-[#0874f2] w-full rounded-4xl text-white">Get Bonus</button>
+
+
+        </form>
+      </div>
+     <!-- Pay bill section -->
+      <div id="pay-bill-parent" class="form hidden p-8 bg-gray-200 m-4 rounded-xl ">
+         <h2 class="text-3xl text-center font-bold my-4 p-4">Pay Bill</h2>
+          <form>
+             
+            <div>
+             <label for="number" class="font-semibold ">Agent Number</label> <br>
+            <input type="text" placeholder="Agent Number" id="" class="input rounded-xl mb-5 mt-2 w-full" />
+           </div>
+            <div>
+             <label for="number" class="font-semibold ">Amount</label> <br>
+            <input type="text" placeholder="Amount" id="" class="input rounded-xl mb-5 mt-2 w-full" />
+           </div>
+            <div>
+             <label for="number" class="font-semibold ">Pin Number</label> <br>
+            <input type="text" placeholder="Enter 4 digit pin" id="" class="input rounded-xl mb-5 mt-2 w-full" />
+           </div>
+
+            <button id="" class="btn bg-[#0874f2] w-full rounded-4xl text-white">Pay Bill</button>
+
+
+        </form>
+      </div>
+     <!-- Transactions section -->
+      <div id="transaction-parent" class="form hidden p-8 bg-gray-200 m-4 rounded-xl ">
+         <h2 class="text-3xl text-center font-bold my-4 p-4">Transactions</h2>
+          <form>
+             
+            <div>
+             <label for="number" class="font-semibold ">Agent Number</label> <br>
+            <input type="text" placeholder="Agent Number" id="" class="input rounded-xl mb-5 mt-2 w-full" />
+           </div>
+            <div>
+             <label for="number" class="font-semibold ">Amount</label> <br>
+            <input type="text" placeholder="Amount" id="" class="input rounded-xl mb-5 mt-2 w-full" />
+           </div>
+            <div>
+             <label for="number" class="font-semibold ">Pin Number</label> <br>
+            <input type="text" placeholder="Enter 4 digit pin" id="" class="input rounded-xl mb-5 mt-2 w-full" />
+           </div>
+
+            <button id="" class="btn bg-[#0874f2] w-full rounded-4xl text-white">Transactions</button>
 
 
         </form>

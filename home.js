@@ -36,6 +36,7 @@ function toggleBtnStyles(id){
         btn.classList.remove("border-[#0874f2]", "bg-[#0874F20d]", "text-[#0874f2]")
         btn.classList.add("border-grey-500")
     }
+    document.getElementById(id).classList.remove("border-grey-500")
     document.getElementById(id).classList.add("border-[#0874f2]", "bg-[#0874F20d]", "text-[#0874f2]")
 }
 
@@ -138,6 +139,7 @@ document.getElementById('add-money-toggle').addEventListener('click', function()
     //     btn.classList.remove("border-[#0874f2]", "bg-[#0874F20d]", "text-[#0874f2]")
     //     btn.classList.add("border-grey-500")
     // }
+    // document.getElementById('add-money-toggle').classList.remove("border-grey-500")
     // document.getElementById('add-money-toggle').classList.add("border-[#0874f2]", "bg-[#0874F20d]", "text-[#0874f2]")
 
     toggleBtnStyles('add-money-toggle')
@@ -163,5 +165,30 @@ document.getElementById('transfer-toggle').addEventListener('click', function(){
      toggleForm('transfer-parent')
 
      toggleBtnStyles('transfer-toggle')
+
+})
+
+// get bonus
+document.getElementById('bonus-toggle').addEventListener('click', function(){
+
+     toggleForm('bonus-parent')
+
+     toggleBtnStyles('bonus-toggle')
+
+})
+// add money
+document.getElementById('pay-bill-toggle').addEventListener('click', function(){
+
+     toggleForm('pay-bill-parent')
+
+     toggleBtnStyles('pay-bill-toggle')
+
+})
+// transactions
+document.getElementById('transaction-toggle').addEventListener('click', function(){
+
+     toggleForm('transaction-parent')
+
+     toggleBtnStyles('transaction-toggle')
 
 })
