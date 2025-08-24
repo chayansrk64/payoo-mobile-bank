@@ -3,6 +3,8 @@
 // pin number
 const pinNumber = 1234;
 
+const transactionData = [];
+
 // ============== reusable functions =============
 
 // reusable function for values
@@ -74,7 +76,16 @@ document.querySelector('#add-money-btn').addEventListener('click', function(even
 
     // notification
     alert('Balance Updated Succesfully!')
-   
+
+
+    // transcation data
+    const data = {
+        name: "Add Money",
+        date: new Date().toLocaleTimeString()
+    }
+
+    transactionData.push(data)
+    
 
 
 })
@@ -112,8 +123,52 @@ document.querySelector('#withdraw-btn').addEventListener('click', function(event
     alert("Cash out successful!")
 
 
+    // transcation data
+    const data = {
+        name: "WithDraw Money",
+        date: new Date().toLocaleTimeString()
+    }
+
+    transactionData.push(data)
+
     
 })
+
+
+
+// transaction section ======
+
+document.getElementById('transaction-toggle').addEventListener('click', function(){
+    const transactionContainer = document.getElementById('transaction-container')
+    for(const data of transactionData){
+        const div = document.createElement('div');
+        div.innerHTML = `
+            <div class="flex justify-between items-center bg-white p-3 rounded-xl mb-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center ">
+                        <div class="bg-gray-200 rounded-full p-2 me-3">
+                            <img class="mx-auto" src="./assets/purse1.png" alt="">
+                        </div>
+                    <div>
+                        <h3 class="font-semibold">${data.name}</h3>
+                        <p>${data.date}</p>
+                    </div>
+                    </div>
+                </div>
+                <div>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+             </div>
+        `
+        transactionContainer.appendChild(div)
+    }
+})
+
+
+
+
+
+
 
 
 
