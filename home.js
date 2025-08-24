@@ -3,17 +3,27 @@
 // pin number
 const pinNumber = 1234;
 
+// reusable function for values
+function getValuesInNumber(id){
+    return parseInt(document.getElementById(id).value);
+}
+
+// reusable for avaiable balance
+function getAvailableBalance(){
+    return parseInt(document.querySelector('#available-balance').textContent);
+}
+
 document.querySelector('#add-money-btn').addEventListener('click', function(event){
     event.preventDefault();
     
     // get input field value
     const bank = document.querySelector('#add-bank').value;
-    const bankAccountNumber = document.querySelector('#add-bank-account').value;
-    const addAmount = parseInt(document.querySelector('#add-amount').value);
-    const addPin = parseInt(document.querySelector('#add-pin').value);
+    const bankAccountNumber = getValuesInNumber('add-bank-account')
+    const addAmount = getValuesInNumber('add-amount');
+    const addPin = getValuesInNumber('add-pin')
 
     // get the avaiable balance
-    const avaiableBalance = parseInt(document.querySelector('#available-balance').textContent)
+    const avaiableBalance = getAvailableBalance()
 
     // sum available balance 
     if(bankAccountNumber.length < 11){
@@ -45,11 +55,13 @@ document.querySelector('#withdraw-btn').addEventListener('click', function(event
     event.preventDefault();
 
      // get the avaiable balance
-    const avaiableBalance = parseInt(document.querySelector('#available-balance').textContent)
+    const avaiableBalance = getAvailableBalance()
     // withdraw fileds
-    const agentNumber = document.querySelector('#agent-number').value;
-    const cashOutAmount = parseInt(document.querySelector('#cashout-amount').value);
-    const cashOutPin = parseInt(document.querySelector('#cashout-pin').value);
+    const agentNumber = getValuesInNumber('agent-number')
+
+    const cashOutAmount = getValuesInNumber('cashout-amount')
+
+    const cashOutPin = getValuesInNumber('cashout-pin')
 
     // validation pin
     if(pinNumber !== cashOutPin){
