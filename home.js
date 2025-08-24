@@ -55,6 +55,10 @@ document.querySelector('#add-money-btn').addEventListener('click', function(even
     const bank = document.querySelector('#add-bank').value;
     const bankAccountNumber = getValuesInNumber('add-bank-account')
     const addAmount = getValuesInNumber('add-amount');
+    if(addAmount <= 0){
+        alert("Please Input valid number");
+        return;
+    }
     const addPin = getValuesInNumber('add-pin')
 
     // get the avaiable balance
@@ -105,6 +109,10 @@ document.querySelector('#withdraw-btn').addEventListener('click', function(event
     const agentNumber = getValuesInNumber('agent-number')
 
     const cashOutAmount = getValuesInNumber('cashout-amount')
+    if(cashOutAmount <= 0 || cashOutAmount > avaiableBalance){
+        alert('Pleae input a valid amount');
+        return;
+    }
 
     const cashOutPin = getValuesInNumber('cashout-pin')
 
@@ -140,6 +148,8 @@ document.querySelector('#withdraw-btn').addEventListener('click', function(event
 
 document.getElementById('transaction-toggle').addEventListener('click', function(){
     const transactionContainer = document.getElementById('transaction-container')
+    transactionContainer.innerText = '';
+
     for(const data of transactionData){
         const div = document.createElement('div');
         div.innerHTML = `
