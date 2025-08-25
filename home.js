@@ -3,7 +3,6 @@
 // pin number
 const pinNumber = 1234;
 
-const transactionData = [];
 
 // ============== reusable functions =============
 
@@ -82,14 +81,18 @@ document.querySelector('#add-money-btn').addEventListener('click', function(even
     alert('Balance Updated Succesfully!')
 
 
+     let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+
     // transcation data
     const data = {
         name: "Add Money",
         date: new Date().toLocaleTimeString()
     }
 
-    transactionData.push(data)
-    
+
+    transactions.push(data)
+
+   localStorage.setItem('transactions', JSON.stringify(transactions))
 
 
 })
@@ -131,13 +134,20 @@ document.querySelector('#withdraw-btn').addEventListener('click', function(event
     alert("Cash out successful!")
 
 
+     let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+
     // transcation data
     const data = {
         name: "WithDraw Money",
         date: new Date().toLocaleTimeString()
     }
 
-    transactionData.push(data)
+    transactions.push(data)
+
+    // transactionData.push(data)
+    localStorage.setItem('transactions', JSON.stringify(transactions))
+   
+
 
     
 })
@@ -150,7 +160,11 @@ document.getElementById('transaction-toggle').addEventListener('click', function
     const transactionContainer = document.getElementById('transaction-container')
     transactionContainer.innerText = '';
 
-    for(const data of transactionData){
+    let transactions = JSON.parse(localStorage.getItem("transactions"));
+    // console.log(transactions )
+
+
+    for(const data of transactions){
         const div = document.createElement('div');
         div.innerHTML = `
             <div class="flex justify-between items-center bg-white p-3 rounded-xl mb-4">
@@ -175,6 +189,38 @@ document.getElementById('transaction-toggle').addEventListener('click', function
 })
 
 
+// latest payment section ========
+ 
+ let transactions = JSON.parse(localStorage.getItem("transactions"));
+    console.log(transactions)
+     
+    let reverseTranssations = transactions.reverse();
+     
+    for(let data of reverseTranssations){
+        const latestPaymentContainer = document.getElementById('latest-payment-container');
+        const div =  document.createElement('div');
+        div.innerHTML = `
+            <div class="flex justify-between items-center bg-white p-3 rounded-xl mb-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center ">
+                        <div class="bg-gray-200 rounded-full p-2 me-3">
+                            <img class="mx-auto" src="./assets/purse1.png" alt="">
+                        </div>
+                    <div>
+                        <h3 class="font-semibold">${data.name}</h3>
+                        <p>${data.date}</p>
+                    </div>
+                    </div>
+                </div>
+                <div>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+             </div>
+        `
+        latestPaymentContainer.appendChild(div)
+    }
+
+    
 
 
 
