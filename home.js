@@ -1,3 +1,9 @@
+//  logout button event 
+
+document.getElementById('logout-btn').addEventListener('click', function(){
+    window.location.href = '/'
+})
+
 // add event listener to the Add Money
 
 // pin number
