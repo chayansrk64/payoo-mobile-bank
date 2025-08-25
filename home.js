@@ -199,11 +199,12 @@ document.getElementById('transaction-toggle').addEventListener('click', function
 // latest payment section ========
  
  let transactions = JSON.parse(localStorage.getItem("transactions"));
-    console.log(transactions)
-     
-    let reverseTranssations = transactions.reverse();
-     
-    for(let data of reverseTranssations){
+    // console.log(transactions)    
+ let latestTransactions = transactions.reverse();
+
+  
+    for(let data of latestTransactions){
+      
         const latestPaymentContainer = document.getElementById('latest-payment-container');
         const div =  document.createElement('div');
         div.innerHTML = `
@@ -225,7 +226,11 @@ document.getElementById('transaction-toggle').addEventListener('click', function
              </div>
         `
         latestPaymentContainer.appendChild(div)
+        
+        
     }
+
+
 
     
 
