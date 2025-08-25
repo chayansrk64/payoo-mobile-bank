@@ -28,6 +28,7 @@ function toggleForm(id){
         form.style.display = 'none'
     }
     document.getElementById(id).style.display = 'block';
+    document.getElementById('latest-payment-parent').style.display = 'none';
 }
 
 // toggle button styles
